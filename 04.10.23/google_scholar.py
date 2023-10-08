@@ -9,15 +9,6 @@ class GoogleScholar(object):
     file_path = './googlescholar.csv'
 
     @staticmethod
-    def get_titles(soup, print_them=False):
-        titles = soup.select('.gs_rt a')
-
-        if print_them:
-            GoogleScholar.print_articles(titles)
-
-        return titles
-
-    @staticmethod
     def request(request, page=0):
         response = requests.get(GoogleScholar.url.format(page * 10, request))
 
