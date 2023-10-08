@@ -4,7 +4,7 @@ import os.path
 
 
 class CyberLeninka(object):
-    url = 'https://cyberleninka.ru'
+    host = 'https://cyberleninka.ru'
     api_url = 'https://cyberleninka.ru/api/search'
     file_path = './cyberleninka.csv'
 
@@ -29,7 +29,7 @@ class CyberLeninka(object):
         return [{
             'source': 'CyberLeninka',
             'title': data['articles'][i]['name'],
-            'link': CyberLeninka.url + data['articles'][i]['link'],
+            'link': CyberLeninka.host + data['articles'][i]['link'],
             'authors': ', '.join(data['articles'][i]['authors']),
         } for i in range(size)]
 
